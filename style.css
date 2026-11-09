@@ -1,0 +1,194 @@
+/* Over Coffee's site: the app's Golden Hour palette, cream by day and
+   moonlit blue at night, in the app's own fonts. */
+
+:root {
+  --page: #fcfaf4;
+  --page-2: #f4eee1;
+  --surface: #ffffff;
+  --ink: #2a1c33;
+  --muted: #6a5b73;
+  --hairline: #ece4ef;
+  --accent: #7748cf;
+  --accent-tint: #eae3f8;
+  --warm: #f9a13d;
+  --brand: #c8102e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #191b3a;
+    --page-2: #0f1126;
+    --surface: #1e2042;
+    --ink: #eef0ff;
+    --muted: #a6aad2;
+    --hairline: #30345e;
+    --accent: #ffdd7a;
+    --accent-tint: #2c2f5c;
+    --warm: #ff6ec7;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--page) 0%, var(--page-2) 100%) fixed;
+  background-color: var(--page);
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site {
+  padding: 22px 0;
+}
+
+header.site .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Baloo 2', 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 18px;
+}
+
+nav a:first-child { margin-left: 0; }
+
+nav a:hover,
+nav a[aria-current='page'] { color: var(--ink); }
+
+main { padding: 24px 0 56px; }
+
+h1, h2, h3 {
+  font-family: 'Baloo 2', 'Nunito', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 40px; margin: 8px 0 12px; }
+h2 { font-size: 26px; margin: 40px 0 8px; }
+h3 { font-size: 19px; margin: 24px 0 4px; }
+
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--accent); }
+
+.lede {
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+}
+
+.card > :last-child { margin-bottom: 0; }
+
+.card h2:first-child,
+.card h3:first-child { margin-top: 0; }
+
+.short {
+  border-left: 4px solid var(--warm);
+}
+
+.hero {
+  text-align: center;
+  padding: 32px 0 8px;
+}
+
+.hero img {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  box-shadow: 0 10px 30px rgba(42, 28, 51, 0.18);
+}
+
+.hero h1 { font-size: 48px; margin-top: 18px; }
+
+.pill {
+  display: inline-block;
+  background: var(--accent-tint);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.grid .card { margin: 0; }
+.grid h3 { margin-top: 0; }
+.grid p { color: var(--muted); font-size: 16px; }
+
+.email {
+  font-weight: 800;
+  word-break: break-all;
+}
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 22px 0 40px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+footer.site a { color: var(--muted); }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  h1 { font-size: 32px; }
+  .hero h1 { font-size: 38px; }
+  h2 { font-size: 23px; }
+  nav a { margin-left: 14px; }
+}
